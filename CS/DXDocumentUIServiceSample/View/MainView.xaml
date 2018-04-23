@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="DXDocumentUIServiceSample.View.MainView"  
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" 
+    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"            
+    xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm" 
+    xmlns:v="clr-namespace:DXDocumentUIServiceSample.View"
+    xmlns:vm="clr-namespace:DXDocumentUIServiceSample.ViewModel" 
+    mc:Ignorable="d" DataContext="{dxmvvm:ViewModelSource Type={x:Type vm:MainViewModel}}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <GroupBox Header="Users">
+            <dxg:GridControl Name="grid" ItemsSource="{Binding Users}">
+                <dxg:GridControl.Columns>
+                    <dxg:GridColumn FieldName="NickName"/>
+                    <dxg:GridColumn FieldName="Registration"/>
+                    <dxg:GridColumn FieldName="Rating"/>
+                </dxg:GridControl.Columns>
+                <dxg:GridControl.View>
+                    <dxg:TableView AllowEditing="False" AutoWidth="True" VerticalScrollbarVisibility="Auto" FadeSelectionOnLostFocus="False">
+                        <dxmvvm:Interaction.Behaviors>
+                            <dxmvvm:EventToCommand EventName="RowDoubleClick" Command="{Binding CreateDocumentCommand}" CommandParameter="{Binding ElementName=grid, Path=CurrentItem}"/>
+                        </dxmvvm:Interaction.Behaviors>
+                    </dxg:TableView>
+                </dxg:GridControl.View>
+            </dxg:GridControl>
+        </GroupBox>
+        <GroupBox Grid.Row="1">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Create Document" Command="{Binding CreateDocumentCommand}" CommandParameter="{Binding ElementName=grid, Path=CurrentItem}" Margin="4 2"/>
+            </StackPanel>           
+        </GroupBox>
+    </Grid>
+</UserControl>
