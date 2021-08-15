@@ -1,9 +1,10 @@
 ﻿using DevExpress.Mvvm;
-using DevExpress.Mvvm.POCO;
 using DevExpress.Mvvm.DataAnnotations;
-using System.Linq;
-using System.Collections.ObjectModel;
+using DevExpress.Mvvm.POCO;
+using DevExpress.Mvvm.Xpf;
 using DXDocumentUIServiceSample.Common;
+using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace DXDocumentUIServiceSample.ViewModel {
     [POCOViewModel]
@@ -12,14 +13,20 @@ namespace DXDocumentUIServiceSample.ViewModel {
         public virtual ObservableCollection<UserViewModel> Users { get; set; }
 
         public MainViewModel() {
-            Users = DataHelper.GetUsers();   
+            Users = DataHelper.GetUsers();
         }
 
-        public void CreateDocument(object arg) {
-            IDocument doc = DocumentManagerService.FindDocument(arg);
-            if (doc == null) {
-                doc = DocumentManagerService.CreateDocument("DetailedView", arg);
-                doc.Id = DocumentManagerService.Documents.Count<IDocument>();
+        [Command]
+        public void DoubleClick(RowClickArgs args) {
+            CreateDocument(args.Item);
+        }
+
+        [Command]
+        public void CreateDocument(object viewModel) {
+            var doc = DocumentManagerService.FindDocument(viewModel);
+            if(doc == null) {
+                doc = DocumentManagerService.CreateDocument("DetailedView", viewModel);
+                doc.Id = DocumentManagerService.Documents.Count();
             }
             doc.Show();
         }
