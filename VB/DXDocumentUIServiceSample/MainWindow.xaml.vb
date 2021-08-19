@@ -1,6 +1,6 @@
 ﻿Namespace DXDocumentUIServiceSample
 	Partial Public Class MainWindow
-		Inherits DevExpress.Xpf.Core.DXWindow
+		Inherits DevExpress.Xpf.Core.ThemedWindow
 
 		Public Sub New()
 			InitializeComponent()
