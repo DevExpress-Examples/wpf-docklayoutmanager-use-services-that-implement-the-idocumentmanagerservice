@@ -1,16 +1,17 @@
 ﻿using DevExpress.Mvvm;
 using DevExpress.Mvvm.DataAnnotations;
-using DevExpress.Mvvm.POCO;
 using DevExpress.Mvvm.Xpf;
 using DXDocumentUIServiceSample.Common;
 using System.Collections.ObjectModel;
 using System.Linq;
 
 namespace DXDocumentUIServiceSample.ViewModel {
-    [POCOViewModel]
-    public class MainViewModel {
-        protected IDocumentManagerService DocumentManagerService { get { return this.GetService<IDocumentManagerService>(); } }
-        public virtual ObservableCollection<UserViewModel> Users { get; set; }
+    public class MainViewModel : ViewModelBase {
+        IDocumentManagerService DocumentManagerService { get { return this.GetService<IDocumentManagerService>(); } }
+        public ObservableCollection<UserViewModel> Users {
+            get { return GetValue<ObservableCollection<UserViewModel>>(); }
+            set { SetValue(value); }
+        }
 
         public MainViewModel() {
             Users = DataHelper.GetUsers();
