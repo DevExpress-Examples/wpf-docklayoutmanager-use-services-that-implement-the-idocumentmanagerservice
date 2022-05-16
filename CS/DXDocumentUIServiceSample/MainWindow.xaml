@@ -57,6 +57,7 @@
                                 </dxdo:LayoutPanel>
                                 <dxdo:LayoutGroup x:Name="layoutGroup"
                                                   Caption="Panels"
+                                                  DestroyOnClosingChildren="False"
                                                   ItemHeight="*" />
                             </dxdo:LayoutGroup>
                         </dxdo:DockLayoutManager>
