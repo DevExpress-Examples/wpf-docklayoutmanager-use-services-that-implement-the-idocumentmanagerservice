@@ -6,7 +6,12 @@
 
 # WPF Dock Layout Manager - Use Services That Implement the IDocumentManagerService Interface
 
-Our <a href="https://documentation.devexpress.com/WPF/CustomDocument15112.aspx">MVVM Framework</a> includes a the following services that implement the <a href="https://documentation.devexpress.com/WPF/clsDevExpressMvvmIDocumentManagerServicetopic.aspx">IDocumentManagerService</a> interface:<br> 1. <a href="https://documentation.devexpress.com/WPF/CustomDocument18275.aspx">DockingDocumentUIService</a> <br>2. <a href="https://documentation.devexpress.com/WPF/CustomDocument18172.aspx">FrameDocumentUIService</a> <br>3. <a href="https://documentation.devexpress.com/WPF/CustomDocument18173.aspx">TabbedDocumentUIService</a> <br>4. <a href="https://documentation.devexpress.com/WPF/CustomDocument18174.aspx">WindowedDocumentUIService</a> <br>5. <a href="https://documentation.devexpress.com/WPF/CustomDocument114043.aspx">TabbedWindowDocumentUIService</a>
+Our [MVVM Framework](https://docs.devexpress.com/WPF/15112/mvvm-framework) includes a the following services that implement the `IDocumentManagerService` interface:
+1. [DockingDocumentUIService](https://docs.devexpress.com/WPF/18275/mvvm-framework/services/predefined-set/document-services/dockingdocumentuiservice)
+2. [FrameDocumentUIService](https://docs.devexpress.com/WPF/18172/mvvm-framework/services/predefined-set/document-services/framedocumentuiservice)
+3. [TabbedDocumentUIService](https://docs.devexpress.com/WPF/18173/mvvm-framework/services/predefined-set/document-services/tabbeddocumentuiservice)
+4. [WindowedDocumentUIService](https://docs.devexpress.com/WPF/18174/mvvm-framework/services/predefined-set/document-services/windoweddocumentuiservice)
+5. [TabbedWindowDocumentUIService](https://docs.devexpress.com/WPF/114043/mvvm-framework/services/predefined-set/document-services/tabbedwindowdocumentuiservice)
 
 ![image](https://user-images.githubusercontent.com/12169834/174018853-908d505f-63df-4de7-b1bc-330ad1331490.png)
 
