@@ -5,7 +5,7 @@
 
 # WPF Dock Layout Manager - Use Services That Implement the IDocumentManagerService Interface
 
-Our [MVVM Framework](https://docs.devexpress.com/WPF/15112/mvvm-framework) includes a the following services that implement the `IDocumentManagerService` interface:
+Our [MVVM Framework](https://docs.devexpress.com/WPF/15112/mvvm-framework) includes the following services that implement the `IDocumentManagerService` interface:
 1. [DockingDocumentUIService](https://docs.devexpress.com/WPF/18275/mvvm-framework/services/predefined-set/document-services/dockingdocumentuiservice)
 2. [FrameDocumentUIService](https://docs.devexpress.com/WPF/18172/mvvm-framework/services/predefined-set/document-services/framedocumentuiservice)
 3. [TabbedDocumentUIService](https://docs.devexpress.com/WPF/18173/mvvm-framework/services/predefined-set/document-services/tabbeddocumentuiservice)
